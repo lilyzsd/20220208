@@ -1,0 +1,27 @@
+$page_width:1190px;
+$page_container:100%;
+$page_size:14px;
+$div_margin:10px;
+@import "compass/reset";
+
+@mixin linear($startcolor:#ff5000, $endcolor:#ff6f06) {
+    background-image: linear-gradient(to right, $startcolor 0, $endcolor 100%);
+}
+
+$colors:(a:#ffa, b:#acc);
+
+%box {
+    width: $page_width;
+    height: 100px;
+    margin: 0 auto;
+}
+
+#top {
+    @extend %box;
+    background: map-get($colors, a);
+}
+
+#header {
+    @extend %box;
+    background: map-get($colors, b);
+}
